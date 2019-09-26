@@ -1,1 +1,64 @@
 /* pages/cinema/cinema.wxss */
+.nav{
+display:flex;
+flex-direction:row;
+background-color:#222222;
+}
+.select{
+width:32%;
+height:45px;
+line-height:45px;
+text-align:center;
+color:#ffffff;
+font-size:13px;
+border-bottom:10px solid#777777;
+}
+.normal{
+width:32%;
+height:45px;
+line-height:45px;
+text-align:center;
+color:#ffffff;
+font-size:13px;
+}
+.line{
+height:45px;
+line-height:45px;
+font-size:25px;
+color:#666666;
+}
+.items{
+background-color: #f2f2f2;
+height:1000px;
+}
+.item{
+width:32%;
+height: 200px;
+margin-top:10px;
+text-align: center;
+float: left;
+}
+.name{
+font-size: 14px;
+font-weight: bold;
+margin: 5px;
+}
+.t1{
+margin-top:7px;
+margin-left:5px;
+font-size: 16px;
+color: gray;
+font-weight: 400;
+}
+/* 横着的分割View样式 */
+/*分割线样式*/
+.divLine{
+ background: #E0E3DA;
+ width: 100%;
+ height: 5rpx;
+ margin-top:10px;
+}
+.t3{
+  margin-top: 7px;
+  margin-left: 20px;
+}

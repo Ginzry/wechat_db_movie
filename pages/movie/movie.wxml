@@ -31,11 +31,10 @@
 </block>
 </view>
 
+<!-- 跳转，如果修改，就改这里 -->
 </swiper-item>
 <swiper-item>
-<view>影院内容</view>
 </swiper-item>
 <swiper-item>
-<view>我看内容</view>
 </swiper-item>
 </swiper>

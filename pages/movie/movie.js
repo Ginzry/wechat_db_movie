@@ -1,7 +1,7 @@
 var util = require('../../utils/util.js')
 Page({
   data: {
-    currentTab: 0,
+    currentTab: 0, 
     winWidth: 0,
     winHeight: 0,
     indicatorDots: false,
@@ -28,6 +28,14 @@ Page({
   switchNav: function (e) {
     var id = e.currentTarget.id;
     this.setData({ currentTab: id });
+    if(id==1){
+      wx.redirectTo({
+        url: '/pages/cinema/cinema',
+        success: function(res) {},
+        fail: function(res) {},
+        complete: function(res) {},
+      })
+    }
   },
   loadMovies: function () {
     var page = this;
