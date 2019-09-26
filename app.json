@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/movie/movie",
+    "pages/cinema/cinema",
+    "pages/me/me",
+    "pages/movieDetail/movieDetail",
+    "pages/have1/have1",
+    "pages/have2/have2",
+    "pages/change/change"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1A1A1A",
+    "navigationBarTitleText": "豆瓣电影",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json"
+}

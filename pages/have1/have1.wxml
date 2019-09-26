@@ -1,0 +1,37 @@
+<view class="content" style="height:{{winHeight}}px">
+  <view class="bg">
+    <view class="item">
+      <view class="wrApper left">
+        <view class="normal">8月24日</view>
+        <view class="normal">10:30开场</view>
+      </view>
+
+      <view></view>
+      <view class="wrApper center">
+        <view class="blue">罗小黑战记</view>
+      </view>
+      <view class="wrApper right">
+        <view class="normal">价格：34元</view>
+        <view class="normal">12:00结束</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="bg">
+    <view class="item">
+      <view class="wrApper left">
+        <view class="normal">9月1日</view>
+        <view class="normal">14:30开场</view>
+      </view>
+      <view class="wrApper center">
+        <view class="blue">攀登者</view>
+      </view>
+      <view class="wrApper right">
+        <view class="normal">价格：57元</view>
+        <view class="normal">16:30结束</view>
+      </view>
+    </view>
+
+  </view>
+
+</view>

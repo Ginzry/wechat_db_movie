@@ -1,0 +1,54 @@
+<view class="content" style="height:{{winHeight}}px">
+  <view class="bg">
+    <view class="item">
+      <view class="wrApper left">
+        <view class="normal">类型：代金券</view>
+        <view class="blue">状态：未使用</view>
+      </view>
+
+      <view class="wrApper center">
+        <view class="red">3D电影任选</view>
+      </view>
+      <view class="wrApper right">
+        <view class="normal">价格：10元</view>
+        <view class="normal">9.1-12.1</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="bg">
+    <view class="item">
+      <view class="wrApper left">
+        <view class="normal">类型：代金券</view>
+        <view class="blue">状态：未使用</view>
+      </view>
+
+      <view class="wrApper center">
+        <view class="red">2D电影任选</view>
+      </view>
+      <view class="wrApper right">
+        <view class="normal">价格：5元</view>
+        <view class="normal">10.1-11.1</view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="bg">
+    <view class="item">
+      <view class="wrApper left">
+        <view class="normal">类型：代金券</view>
+        <view class="blue">状态：未使用</view>
+      </view>
+
+      <view class="wrApper center">
+        <view class="red">爆米花优惠</view>
+      </view>
+      <view class="wrApper right">
+        <view class="normal">价格：15元</view>
+        <view class="normal">9.1-10.1</view>
+      </view>
+    </view>
+  </view>
+
+</view>
