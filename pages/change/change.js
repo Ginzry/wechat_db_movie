@@ -1,5 +1,4 @@
-// pages/me/me.js
-var util = require('../../utils/util.js')
+// pages/change/change.js
 Page({
 
   /**
@@ -13,15 +12,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this
-    //调用应用实例的方法获取全局数据
-    App.getUserInfo(function (userInfo) {
-      console.log(userInfo);
-      //更新数据
-      that.setData({
-        userInfo: userInfo
-      })
-    })
 
   },
 

@@ -1,9 +1,10 @@
-<view class="nav">
-<view id="0"class="{{currentTab==0?'select':'normal'}}"bindtap="switchNav">上映</view>
-<view class="line">|</view>
-<view id="1"class="{{currentTab==1?'select':'normal'}}"bindtap="switchNav">影院</view>
-<view class="line">|</view>
-<view id="2"class="{{currentTab==2?'select':'normal'}}"bindtap="switchNav">我看</view>
+<import src="../public/stars.wxml" />
+<view class="nav1">
+<view id="0"class="{{currentTab==0?'select1':'normal1'}}"bindtap="switchNav">上映</view>
+<view class="line1">|</view>
+<view id="1"class="{{currentTab==1?'select1':'normal1'}}"bindtap="switchNav">影院</view>
+<view class="line1">|</view>
+<view id="2"class="{{currentTab==2?'select1':'normal1'}}"bindtap="switchNav">我看</view>
 </view>
 <swiper current="{{currentTab}}"style="height:{{winHeight}}px">
 <swiper-item>
@@ -17,24 +18,202 @@
 </swiper>
 </view>
 
-<view class="items">
+<view class="items1">
 <block wx:for="{{movies}}">
-<view class="item"bindtap="loadDetail"id="{{item.id}}">
+<view class="item1"bindtap="loadDetail"id="{{item.id}}">
 <view>
 <image src="{{item.images.medium}}"style="width:100px;height:150px;"></image>
 </view>
-<view class="name">
+<view class="name1">
 <text>{{item.title}}</text>
 </view>
-<text>{{}}</text>
+<view>
+<template is="starsTpl" data="{{...item}}"></template>
+</view>
+
 </view>
 </block>
 </view>
+</swiper-item>
 
-<!-- 跳转，如果修改，就改这里 -->
-</swiper-item>
+
 <swiper-item>
+
+<view class="t1">
+<text>常去的电影院</text>
+</view>
+
+<!-- 常用影院 -->
+<view wx:for="{{recent}}">
+
+  <view class="divLine"></view>
+  <view class="t3">
+  <text>{{item.name}}</text>
+  </view>
+
+</view>
+
+<!-- 分割线 -->
+<view class="divLine"></view>
+
+<view class="t1"  style="font-size:14px">
+<text>附近的影院</text>
+</view>
+
+<!-- 分割线 -->
+<view class="divLine"></view>
+
+<!-- 数据 -->
+<view class="t2">
+
+<!-- data-text="{{c[0].name}}" -->
+<view class="t3" bindtap="select" id="0" >
+<image src="/pages/cinema/image/map.png" style="height:23px;width:23px;margin-top:5px"></image>
+<text style="margin-left:15px;margin-top:5px"> {{c[0].name}} </text>
+</view>
+
+<view class="divLine"></view>
+
+<view class="t3" bindtap="select" id="1">
+<image src="/pages/cinema/image/map.png" style="height:23px;width:23px;margin-top:5px"></image>
+<text style="margin-left:15px;margin-top:5px"> {{c[1].name}} </text>
+</view>
+
+<view class="divLine"></view>
+
+<view class="t3" bindtap="select" id="2">
+<image src="/pages/cinema/image/map.png" style="height:23px;width:23px;margin-top:5px"></image>
+<text style="margin-left:15px;margin-top:5px"> {{c[2].name}} </text>
+</view>
+
+<view class="divLine"></view>
+
+<view class="t3" bindtap="select" id="3">
+<image src="/pages/cinema/image/map.png" style="height:23px;width:23px;margin-top:5px"></image>
+<text style="margin-left:15px;margin-top:5px"> {{c[3].name}} </text>
+</view>
+
+<view class="divLine"></view>
+
+<view class="t3" bindtap="select" id="4">
+<image src="/pages/cinema/image/map.png" style="height:23px;width:23px;margin-top:5px"></image>
+<text style="margin-left:15px;margin-top:5px"> {{c[4].name}} </text>
+</view>
+
+<view class="divLine"></view>
+
+<view class="t3" bindtap="select" id="5">
+<image src="/pages/cinema/image/map.png" style="height:23px;width:23px;margin-top:5px"></image>
+<text style="margin-left:15px;margin-top:5px"> {{c[5].name}} </text>
+</view>
+
+<view class="divLine"></view>
+
+</view>
+
 </swiper-item>
+
+
+
+
+
+
 <swiper-item>
+
+<view class="amountBg">
+<view class="img"><image src="head/head.jpg"style="width:49px;height:47px;"></image></view>
+<view class="account">
+<view>Luffy</view>
+<view>账号管理</view>
+</view>
+<view class="nav">></view>
+</view>
+
+
+<view class="content">
+<view class="order">
+
+<view class="desc" bindtap="have1">
+<view><image src="ticket/111.jpg" style="width:22px;height:25px;"></image></view>
+<view>我的电影票</view>
+</view>
+
+<view class="desc" bindtap="have2">
+<view><image src="ticket/222.jpg" style="width:22px;height:25px;"></image></view>
+<view>我的兑换券</view>
+</view>
+
+<view class="desc" bindtap="change">
+<view><image src="ticket/333.jpg" style="width:22px;height:25px;"></image></view>
+<view>我的优惠券</view>
+</view>
+<view class="desc">
+<view><image src="ticket/444.jpg" style="width:22px;height:25px;"></image></view>
+<view>兑换优惠券</view>
+</view>
+</view>
+
+<view class="clear" bindtap="have2"></view>
+  <view class="item">
+    <view class="icon"><image src="other/mymoney.jpg"style="width:22px;height:21px;"></image></view>
+      <view class="itemName">
+        <view>我的优惠券</view>
+      </view>
+        <view class="right"><text class="opr">领取优惠券</text>></view>
+    </view>
+  
+  <view class="line"></view>
+  
+  <view class="item">
+    <view class="icon"><image src="other/555.jpg" style="width:22px;height:21px;"></image></view>
+      <view class="itemName">
+        <view>电影推荐</view>
+      </view>
+        <view class="right"><text class="opr">想看/看过</text>></view>
+    </view>
+
+
+  <view class="hr"></view>
+  
+  <view class="item">
+    <view class="icon"><image src="other/666.jpg" style="width:22px;height:21px;"></image></view>
+      <view class="itemName">
+        <view>豆瓣电影Top250</view>
+      </view>
+  </view>
+
+  <view class="hr"></view>
+  
+  <view class="item">
+    <view class="icon"><image src="other/information.jpg" style="width:22px;height:21px;"></image></view>
+      <view class="itemName">
+        <view>消息中心</view>
+      </view>
+        <view class="right"><text class="opr">在线服务</text>></view>
+    </view>
+
+  <view class="hr"></view>
+
+  <view class="item">
+    <view class="icon"><image src="other/777.jpg" style="width:22px;height:21px;"></image></view>
+      <view class="itemName">
+        <view>推荐应用</view>
+      </view>
+    <view class="right">></view>
+  </view>
+
+  <view class="hr"></view>
+
+  <view class="item">
+    <view class="icon"><image src="other/more.jpg" style="width:22px;height:21px;"></image></view>
+      <view class="itemName">
+        <view>更多</view>
+      </view>
+    <view class="right">></view>
+  </view>
+
+</view>
+
+
 </swiper-item>
 </swiper>

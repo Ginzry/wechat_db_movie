@@ -5,9 +5,9 @@
 <view class="line">|</view>
 <view id="2"class="{{currentTab==2?'select':'normal'}}"bindtap="switchNav">短评</view>
 <view class="line">|</view>
-<view id="3"class="{{currentTab==3?'select':'normal'}}"bindtap="switchNav">影评</view>
+<view id="3"class="{{currentTab==3?'select':'normal'}}"bindtap="switchNav">评分</view>
 </view>
-<swiper current="{{currentTab}}"style="height:1200px;background-color:#F9F9F9;">
+<swiper current="{{currentTab}}"style="height:800px;background-color:#F9F9F9;">
 <swiper-item>
 <view class="movieInfo">
 <view>
@@ -60,13 +60,82 @@
 </view>
 </block>
 </swiper-item>
-<swiper-item>
-<view>图片内容</view>
+<swiper-item >
+<image mode="aspectFit" src='{{movie.images.large}}' style='width:100%;height:1000px'></image>
 </swiper-item>
 <swiper-item>
-<view>短评内容</view>
+
+ 
+  <view style='display:flex'>
+      <text style='font-size:small;white-space:nowrap;margin-right:5px'>评论</text>
+<view class='textarea-count'>
+      <textarea placeholder='评论内容' style='border:1px black solid' placeholder-style="font-size:small" auto-height="ture" bindinput="getWords" maxlength='{{maxTextLen}}'>
+      </textarea>
+        <view class='text-count-display f f-end'style='font-size:small'>{{textLen}}/{{maxTextLen}}                  </view>
+    </view>
+    <button class='btn1' open-type='navigate' bindtap='submitData'>
+              <image class='btnImg' src='/images/submit.png'>
+              </image>
+        
+            </button>
+</view>
+
+
+<view class='CircleList' wx:for='{{popular_reviews}}'>
+    <!-- 头像、昵称、内容 -->
+    <view class='body-view'>
+      <view class='right-view'>
+        <view style='dispaly:flex'>
+    <image src='{{item.author.avatar}}' style=' width:100rpx;height: 100rpx;margin-left: 5rpx;margin-top: 5rpx;margin-right: 5rpx;'></image>
+        <!-- 昵称 -->
+        <view class='user-name-view'>
+          <label class='user-name'>{{item.author.name}}</label>
+        </view>
+         </view>
+        <!-- 内容 -->
+        <view class='user-content-view'>
+          <text class='user-content'>{{item.content}}</text>
+        </view>
+  
+
+        <!-- 时间、删除按钮、点赞评论按钮 -->
+        <view class='TDD-view'>
+          <label>{{item.created_at}}</label>
+          <image data-index='{{index}}'style="margin-left:160px" bindtap='TouchDiscuss' src='/images/discuss.png'></image>
+        </view>
+
+      
+          <!-- 评论 -->
+          <view class='discuss-view'>
+            <view class='discuss' wx:for='{{answer}}'>
+              <label bindtap='TouchZanUser' data-name='{{item.firstname}}' class='discuss-user'>{{item.firstname}}：</label>
+              <label class='content'>{{item.content}}</label>
+            </view>
+          </view>
+      
+      </view>
+
+    </view>
+    <view class="replyinfo2" wx:if="{{discussShow[index]}}" style='bottom:0px'>
+      <textarea placeholder-class="input_null" fixed="true" maxlength="20" show-confirm-bar="false" cursor-spacing="15" auto-height="true" placeholder="请输入回复" name="comment" bindinput="getWords"focus="{{discussShow[index]}}"></textarea>
+      <button form-type="submit" class="submit" bindtap='submitdiscuss' data-index="{{index}}">submit</button>
+    </view>
+  </view>
+  <view animation="{{animation}}" class='pop-up-box' style='top:{{popTop}}px;width: {{popWidth}}px;'>
+
+  </view>
 </swiper-item>
 <swiper-item>
-<view>影评内容</view>
+<view>
+    <block wx:for="{{stars}}">
+      <image class="star-image" style="left: {{item*115}}rpx" src="{{key > item ?(key-item == 0.5?halfSrc:selectedSrc) : normalSrc}}">
+        <view class="item" style="left:0rpx" data-key="{{item+0.5}}" bindtap="selectLeft"></view>
+        <view class="item" style="left:50rpx" data-key="{{item+1}}" bindtap="selectRight"></view>
+      </image>
+    </block>
+  <view style="margin-top:150rpx">
+    <button bindtap="startRating">确认</button>
+  </view>
+</view>
 </swiper-item>
 </swiper>
